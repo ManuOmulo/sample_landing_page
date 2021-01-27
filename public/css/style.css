@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Mono&display=swap');
 
 :root {
   --main-color: rgb(97, 47, 233);
@@ -12,6 +12,10 @@
   font-family: 'Roboto', sans-serif;
 }
 
+.wrapper {
+  display: flex;
+  flex-direction: column
+}
 
 .header {
   display: flex;
@@ -76,6 +80,12 @@
   background-color: var(--main-color);
   border: 2px solid var(--text-color);
   border-radius: 5px;
+  outline: none;
+  cursor: pointer
+}
+
+.skew1 .content button:focus {
+  transform: scale(0.98);
 }
 
 .skew1 .content button a {
@@ -99,26 +109,36 @@
   margin-top: 3vh;
   display: flex;
   align-items: center;
-}
-
-.skew2 .container2 .icons .icon1:nth-child(2) {
-  margin: 0 30%;
+  justify-content: center;
 }
 
 .skew2 .container2 .icons .icon1 {
-  display: grid;
-  align-items: center;
+  display: flex;
+  margin: 0 50px;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
   width: 150px;
 }
 
+.skew2 .container2 .icons .icon1 span{
+  font-family: "Roboto Mono", sans-serif;
+  font-size: 18px;
+  color: var(--main-color);
+  margin: 5px 0;
+}
+
 .skew2 .container2 .icons .icon1 i {
-  margin-left: 33px;
   font-size: 50px;
 }
 
-.skew2 .container2 .icons .icon1 p{
+.skew2 .container2 .icons .icon1 .counter{
+  font-family: "Roboto Mono", sans-serif;
   font-size: 25px;
-  margin-top: 5px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 form {
@@ -162,4 +182,91 @@ form .content .button input{
   height: 7vh;
   color: var(--text-color);
   font-size: 20px;
+  outline: none;
+  cursor: pointer;
+}
+
+form .content .button input:focus {
+  transform: scale(0.97);
+}
+
+@media(max-width: 580px) {
+  body {
+    overflow-x: hidden;
+    position: relative;
+  }
+
+  .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  .header .navbar {
+    display: none;
+  }
+
+  .skew1 {
+    height: 100vh;
+  }
+
+  .skew1 .content {
+    margin-top: 30px;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .skew1 .content button {
+    width: 150px;
+    margin-top: 15px;
+  }
+
+  .skew2 {
+    width: 100%;
+  }
+
+  .skew2 .container2 {
+    margin: 80px 0;
+    width: 70%;
+    display: flex;
+    flex-direction: column;
+  }
+
+  .skew2 .container2 p {
+    width: 110%;
+    text-align: center;
+  }
+
+  .skew2 .container2 .icons {
+    width: 130%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-left: -50px;
+  }
+
+  .skew2 .container2 .icons .icon1 {
+    margin: 10px 20px;
+
+  }
+
+  .skew2 .container2 .icons .icon1 i {
+    font-size: 40px;
+  }
+
+  .skew2 .container2 .icons .icon1 .counter {
+    font-size: 20px;
+  }
+
+  .skew2 .container2 .icons .icon1 span {
+    font-size: 16px;
+  }
+
+  form {
+    position: absolute;
+    top: 400px;
+    left: 50px;
+    width: 80%;
+  }
 }
